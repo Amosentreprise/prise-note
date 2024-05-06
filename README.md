@@ -1,0 +1,1 @@
+Cette application web vous permettra de consigner vos notes de réunion et vos résumés, vous offrant ainsi un espace organisé pour capturer vos idées en toute simplicité.
