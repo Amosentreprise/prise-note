@@ -3,11 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="" href="/assets/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="./output.css" rel="stylesheet">
+  <meta property="og:image" content="https://prise-noteApp.surge.sh/assets/logo.png" />
+  <meta
+		  name="description"
+		  content="Une application de prise de notes"
+		/>
+ <meta property="og:type" content="website"/>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QDE756JKQH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QDE756JKQH');
+ </script>
+
 </head>
-<body class="bg-red-400">
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+<body class="bg-slate-200 dark:bg-slate-900 min-h-screen font-poppins">
+    <div class="load bg-slate-200 min-h-screen w-full flex">
+        <div class=" m-auto flex flex-col items-center">
+            <div class="w-12 h-12 rounded-full">
+                <img src="./assets/logo.png" alt="" class=" w-full object-cover h-full">
+            </div>
+          
+            <p class="text-xl font-bold animate-pulse text-blue-500 pt-5">Chargement en cours ...</p>
+        </div>
+
+    </div> 
+
+    <!--  Page de gestion des notes -->
+    <!-- Les notes serons classées pas cartegorie, possibilite de faire un filtre, une recherche -->
+    <!-- En plus de cela , il y a un mode nuit light -->
+
+    <div class="hidden notes-app bg-slate-200 dark:bg-slate-900 h-full w-full  relative ">
+        <div class="w-full h-full p-3">
+            <div class=" float-end">
+                <button id="buttonMode" class=" mr-6 mt text-2xl outline-none"><i class="ri-moon-fill" id="mode"></i></button>
+            </div>
+            
+            <div class="py-10">
+                <button class="p-3  bg-primary font-poppins text-white flex item-center gap-6 rounded-lg outline-none hover:bg-green-500" id="addButton">Ajouter une note <i class="ri-add-circle-line"></i></button>
+            </div>
+            <h2 class="text-center text-xl py-3 dark:text-white">Mes notes</h2>
+    
+            <!-- LES NOTES EN JAVA SCRIPT -->
+            <div class="flex flex-wrap gap-8 w-[80%] mx-auto" id="notes">
+                
+                
+                 
+            </div>
+    
+           
+    
+            <!-- Formulaire d'ajout -->
+    
+            <div class="hidden fixed inset-0 bg-black bg-opacity-50 p-2 z-40" id="addform">
+                <div class="m-auto bg-white w-[400px] h-auto p-2 flex flex-col  space-y-3 z-50">
+                    <div class=" flex justify-between items-center border-b border-slate-400">
+                        <span class="font-bold uppercase" id="formTitle">Ajouter une note</span>
+                        <span class="text-xl text-primary" id="closeButton"><i class="ri-close-circle-fill"></i></span>
+                    </div>
+    
+                    <div>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-sm font-bold">Titre</span>
+                            <input type="text"  class=" rounded-md py-2 w-full border border-slate-500 outline-1 outline-green-400" id="titleNote"/>
+                        </div>
+                        <div class="w-full flex flex-col gap-1">
+                            <span class="text-sm font-bold">Description</span>
+                            <textarea  name="" id="description" class=" rounded-md py-2 w-full resize-none outline-1 outline-green-400 border border-slate-500"></textarea>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <button class="w-full p-2 bg-primary text-center rounded-md outline-none text-white hover:bg-green-400" id="addNote">Enregistrer</button>
+                    </div>
+    
+                </div>
+    
+            </div>
+
+        </div>
+       
+
+        <footer class="m-0 fixed bottom-0 flex items-center justify-center w-full min-h-9  bg-black dark:bg-white ">
+            <h2 class="text-center text-white dark:text-primary">Développé par <a href="https://amosfenousossoukpe.surge.sh/" target="_blank" class="underline">Amos Fènou SOSSOUKPE</a></h2>
+        </footer>
+
+    </div> 
+   
+     <script src="/main.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+  
 </body>
+
 </html>
